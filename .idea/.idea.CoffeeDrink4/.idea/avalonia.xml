@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="CoffeeDrink4/App.axaml" value="CoffeeDrink4/CoffeeDrink4.csproj" />
+        <entry key="CoffeeDrink4/Styles/AppStyle.axaml" value="CoffeeDrink4/CoffeeDrink4.csproj" />
+        <entry key="CoffeeDrink4/Views/AuthorizationView.axaml" value="CoffeeDrink4/CoffeeDrink4.csproj" />
+        <entry key="CoffeeDrink4/Views/MainView.axaml" value="CoffeeDrink4/CoffeeDrink4.csproj" />
+        <entry key="CoffeeDrink4/Views/MainWindow.axaml" value="CoffeeDrink4/CoffeeDrink4.csproj" />
+        <entry key="CoffeeDrink4/Views/SellerView.axaml" value="CoffeeDrink4/CoffeeDrink4.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

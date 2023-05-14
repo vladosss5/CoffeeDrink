@@ -1,0 +1,66 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:CoffeeDrink4.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="CoffeeDrink4.Views.AuthorizationView"
+        x:DataType="viewModels:AuthorizationVM"
+        x:Name="ThisWindow"
+        Title="AuthorizationView">
+    
+    <Design.DataContext>
+                <viewModels:AuthorizationVM/>
+        </Design.DataContext>
+        
+        <Window.Styles>
+                <StyleInclude Source="/Styles/AppStyle.axaml" />
+        </Window.Styles>
+        
+        <Panel>
+                <Border MinWidth="300" MaxWidth="500" 
+                        Margin="15" Padding="30"
+                        Background="Azure" 
+                        VerticalAlignment="Center"  
+                        CornerRadius="25"
+                        Opacity="0.8">
+                        <StackPanel Opacity="1.2">
+                                <TextBlock FontWeight="Bold" FontSize="30" Text="Авторизация"
+                                           Margin="10"/>
+                                
+                                <TextBox Watermark="Логин"
+                                         FontSize="16"
+                                         Text="{Binding Login}"
+                                         Margin="5"
+                                         CornerRadius="10"
+                                         Padding="10, 5, 10, 5"/>
+                                
+                                <TextBox Watermark="Пароль"
+                                         FontSize="16"
+                                         Text="{Binding Password}"
+                                         PasswordChar="*"
+                                         Margin="5"
+                                         CornerRadius="10"
+                                         Padding="10, 5, 10, 5"/>
+                                
+                                <Button Content="Вход"
+                                        FontSize="16" FontWeight="Bold"
+                                        Command="{Binding ButtonEnter}"
+                                        CommandParameter="{Binding ElementName=ThisWindow}"
+                                        Background="Chocolate"
+                                        HorizontalAlignment="Stretch"
+                                        HorizontalContentAlignment="Center"
+                                        Margin="5"
+                                        CornerRadius="10"/>
+                                
+                                <Button Content="Назад"
+                                        FontSize="14"
+                                        HorizontalAlignment="Center"
+                                        Command="{Binding ButtonEnter}"
+                                        CommandParameter="{Binding ElementName=ThisWindow}"
+                                        Background="Transparent"
+                                        CornerRadius="5"/>
+                        </StackPanel>
+                </Border>
+        </Panel>
+</Window>

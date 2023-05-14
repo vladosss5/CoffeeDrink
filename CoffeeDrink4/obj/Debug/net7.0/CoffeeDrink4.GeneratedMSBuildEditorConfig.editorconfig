@@ -1,0 +1,30 @@
+is_global = true
+build_property.AvaloniaNameGeneratorBehavior = InitializeComponent
+build_property.AvaloniaNameGeneratorDefaultFieldModifier = internal
+build_property.AvaloniaNameGeneratorFilterByPath = *
+build_property.AvaloniaNameGeneratorFilterByNamespace = *
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CoffeeDrink4
+build_property.ProjectDir = D:\Документы\yчёба\Курсовая 2\Разработка\CoffeeDrink4\CoffeeDrink4\
+
+[D:/Документы/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/App.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/Документы/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/Styles/AppStyle.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/Документы/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/Views/AuthorizationView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/Документы/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/Views/MainView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/Документы/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/Views/SellerView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
