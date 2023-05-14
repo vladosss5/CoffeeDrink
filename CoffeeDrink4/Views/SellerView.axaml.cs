@@ -10,8 +10,9 @@ public partial class SellerView : Window
 {
     public SellerView()
     {
-        InitializeComponent();
         DataContext = new SellerVM();
+        InitializeComponent();
+        
 #if DEBUG
         this.AttachDevTools();
 #endif
@@ -22,8 +23,4 @@ public partial class SellerView : Window
         AvaloniaXamlLoader.Load(this);
     }
     
-    public void SelectCategory(Category category)
-    {
-        (DataContext as SellerVM).SelectCategoryImpl(category);
-    }
 }

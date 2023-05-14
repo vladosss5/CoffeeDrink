@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:CoffeeDrink4.ViewModels"
         xmlns:coffeeDrink4="clr-namespace:CoffeeDrink4"
+        xmlns:models="clr-namespace:CoffeeDrink4.Models"
         mc:Ignorable="d" d:DesignWidth="720" d:DesignHeight="1080"
         x:Class="CoffeeDrink4.Views.SellerView"
         x:DataType="viewModels:SellerVM"
@@ -31,41 +32,34 @@
                 BorderBrush = "Black" 
                 BorderThickness = "0,0,0,1"
                 Background="Azure">
-                <TextBlock  Text="Категории" FontSize="30"
-                            HorizontalAlignment="Center" Margin="10"
+                <TextBlock  Text="Категории" FontSize="35"
+                            HorizontalAlignment="Center" Margin="15"
                             FontWeight="Bold"/>
         </Border>
         
-        <DataGrid Grid.Column="0" Grid.Row="1" Name="CategoryGrid"
-                  Items="{Binding Category}"
-                  Background="Azure" >
-                <DataGrid.Columns>
-                        <DataGridTemplateColumn >
-                                <DataGridTemplateColumn.CellTemplate>
-                                        <DataTemplate>
-                                                <Grid>
-                                                <Button HorizontalAlignment="Stretch"
-                                                        VerticalAlignment="Stretch"
-                                                        FontSize="24"
-                                                        MinWidth="190"
-                                                        Background="Transparent"
-                                                        Opacity="1"
-                                                        Margin="5"
-                                                        Content="{Binding Name}"
-                                                        Command="{Binding ElementName=ThisWindow, Path= SelectCategory}"
-                                                        CommandParameter="{Binding}"/>
-                                                
-                                                <Image Source="{Binding Photo, Converter={StaticResource BitmapAssetValueConverter}}"
-                                                       MaxHeight="30" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"/>
-                                                </Grid>
-                                        </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                </DataGrid.Columns>
-        </DataGrid>
+        <ListBox Grid.Column="0" Grid.Row="1"
+                 Name="CategoryGrid" 
+                 Items="{Binding Category}"
+                 SelectedItem="{Binding SelectCategory}"
+                 Background="Azure">
+                <ListBox.ItemTemplate>
+                        <DataTemplate>
+                        <Grid>
+                                <TextBlock Text="{Binding Name}"
+                                           HorizontalAlignment="Stretch"
+                                           VerticalAlignment="Center"
+                                           FontSize="24"/>
+                                <Image Source="{Binding Photo, 
+                                        Converter={StaticResource BitmapAssetValueConverter}}" 
+                                       MaxHeight="30" VerticalAlignment="Center" 
+                                       HorizontalAlignment="Right" Margin="5"/>
+                        </Grid>
+                        </DataTemplate>
+                </ListBox.ItemTemplate>
+        </ListBox>
         
-        <ListBox Items="{Binding Dish}"
-                 Background="Azure" 
+        <ListBox Items="{Binding DishesInSelectCat}"
+                 Background="Azure"
                  Opacity="0.7"
                  Grid.Row = "1" Grid.Column="1">
                 <ListBox.ItemsPanel>
@@ -76,16 +70,16 @@
                 <ListBox.ItemTemplate>
                         <DataTemplate>
                                 <Grid Opacity="1.4" Margin="10">
-                                        <Image Grid.Row="0" Source="{Binding Photo, 
+                                        <Image Grid.Row="0" Source="{Binding Photo,
                                                 Converter={StaticResource BitmapAssetValueConverter}}"
-                                               Height="200" Width="200" 
-                                               VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                               Height="200" Width="200"
+                                               VerticalAlignment="Center" HorizontalAlignment="Center"
                                                Margin="5"/>
                                         <TextBlock Grid.Row="1" Text="{Binding Name}"
-                                                   HorizontalAlignment="Center" 
+                                                   HorizontalAlignment="Center"
                                                    VerticalAlignment="Center"
                                                    FontSize="20"/>
-
+        
                                         <Grid.RowDefinitions>
                                                 <RowDefinition MaxHeight="200"/>
                                                 <RowDefinition/>
