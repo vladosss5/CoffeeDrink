@@ -27,17 +27,20 @@
         </Window.Styles>
         
 
-<Grid >
+<Grid Margin="10">
         <Border Grid.Column="0" Grid.Row="0" 
-                BorderBrush = "Black" 
-                BorderThickness = "0,0,0,1"
-                Background="Azure">
+                Background="Azure"
+                CornerRadius="25"
+                Margin="5">
                 <TextBlock  Text="Категории" FontSize="35"
                             HorizontalAlignment="Center" Margin="15"
                             FontWeight="Bold"/>
         </Border>
         
         <ListBox Grid.Column="0" Grid.Row="1"
+                 CornerRadius="25"
+                 Margin="5"
+                 Padding="5"
                  Name="CategoryGrid" 
                  Items="{Binding Category}"
                  SelectedItem="{Binding SelectCategory}"
@@ -58,7 +61,20 @@
                 </ListBox.ItemTemplate>
         </ListBox>
         
-        <ListBox Items="{Binding DishesInSelectCat}"
+        <Border Grid.Column="1" Grid.Row="0" 
+                CornerRadius="25"
+                Margin="5"
+                Background="Azure">
+                <TextBlock  Text="Блюда по категории" FontSize="35"
+                            HorizontalAlignment="Center" Margin="15"
+                            FontWeight="Bold"/>
+        </Border>
+        
+        <ListBox Name="DishListBox" 
+                 Items="{Binding DishesInSelectCat}"
+                 CornerRadius="25"
+                 Margin="5"
+                 Padding="5"
                  Background="Azure"
                  Opacity="0.7"
                  Grid.Row = "1" Grid.Column="1">
