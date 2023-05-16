@@ -17,6 +17,7 @@ public class MainVM : ViewModelBase
         Seller = ReactiveCommand.Create<Window>(OpenSellerWindowImpl);
         TopDishes = ReactiveCommand.Create<Window>(OpenTopDishesWindowImpl);
     }
+    
 
     private void OpenTopDishesWindowImpl(Window obj)
     {

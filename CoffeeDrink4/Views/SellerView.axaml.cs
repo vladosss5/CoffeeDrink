@@ -22,5 +22,16 @@ public partial class SellerView : Window
     {
         AvaloniaXamlLoader.Load(this);
     }
+
+    public void CountPlus(Dish dish)
+    {
+        char flag = '+';
+        (DataContext as SellerVM).EditCountDishImpl(dish, flag);
+    }
     
+    public void CountMinus(Dish dish)
+    {
+        char flag = '-';
+        (DataContext as SellerVM).EditCountDishImpl(dish, flag);
+    }
 }
