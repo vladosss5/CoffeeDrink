@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vrB+vpGNiS7LT/I/1HTxWmjqKl9MEWhGvgedyZq3pLqssKl0kOo//0LevQ3KtELtmSVRSIHNUWSFpPAxAwmCLA==",
+  "dgSpecHash": "capU0mrDw6y+RGTJlfGZMe21JrjxuWhDYvdC7uUvy6x7dmhoMgHt9l+Vvh+G41sW99+MoRZRZoWjkAW7XdBbQw==",
   "success": true,
-  "projectFilePath": "D:\\Документы\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\CoffeeDrink4.csproj",
+  "projectFilePath": "C:\\Users\\тьт\\Documents\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\CoffeeDrink4.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\тьт\\.nuget\\packages\\avalonia\\0.10.19\\avalonia.0.10.19.nupkg.sha512",
     "C:\\Users\\тьт\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.0.2020091801\\avalonia.angle.windows.natives.2.1.0.2020091801.nupkg.sha512",

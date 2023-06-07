@@ -1,29 +1,42 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reactive;
 using System.Threading.Tasks;
+using Avalonia.Controls;
 using AvaloniaEdit.Utils;
 using CoffeeDrink4.Context;
 using CoffeeDrink4.Models;
+using CoffeeDrink4.Views;
 using Microsoft.EntityFrameworkCore;
+using Word = Microsoft.Office.Interop.Word;
+
 using ReactiveUI;
 
 namespace CoffeeDrink4.ViewModels;
 
 public class SellerVM : ViewModelBase
 {
+    private ObservableCollection<Order> _order;
     private ObservableCollection<Dish> _dishes;
     private ObservableCollection<DishCategory> _dishCategories;
     private ObservableCollection<Category> _categories;
     private ObservableCollection<Dish> _dishesInSelectCat = new ObservableCollection<Dish>();
-    private ObservableCollection<Dish> _selectedDishes = new ObservableCollection<Dish>();
     private ObservableCollection<Dish> _dishesInCart = new ObservableCollection<Dish>();
+    private static Category _selectCategory;
+    private static Dish _selectedDishes;
+    private static float _prePrice;
+    
+    public ObservableCollection<Order> Order
+    {
+        get => _order;
+        set => this.RaiseAndSetIfChanged(ref _order, value);
+    }
     public ObservableCollection<Dish> DishesInSelectCat
     {
         get => _dishesInSelectCat;
         set => this.RaiseAndSetIfChanged(ref _dishesInSelectCat, value);
     }
-
-    private static Category _selectCategory;
 
     public Category SelectCategory
     {
@@ -41,6 +54,41 @@ public class SellerVM : ViewModelBase
             DishesInSelectCat.AddRange(dishes);
         }
     }
+    
+    public Dish SelectedDishes
+    {
+        get => _selectedDishes;
+        set
+        {
+            this.RaiseAndSetIfChanged(ref _selectedDishes, value);
+
+            if (SelectedDishes != null)
+            {
+                var edentity = _dishesInCart.SingleOrDefault(x => x.Name == SelectedDishes.Name);
+                
+                if (edentity == null)
+                {
+                    DishesInCart.Add(SelectedDishes);
+                }
+                else
+                {
+                    DishesInCart.Remove(edentity);
+                    DishesInCart.Add(SelectedDishes);
+                }
+            }
+
+            PrePrice = _dishesInCart.Sum(x => x.Price * x.Count);
+        }
+     
+    }
+
+    public ObservableCollection<Dish> DishesInCart
+    {
+        get => _dishesInCart;
+        set => this.RaiseAndSetIfChanged(ref _dishesInCart, value);
+    }
+
+    
     public ObservableCollection<Dish> Dish
     {
         get => _dishes;
@@ -59,36 +107,67 @@ public class SellerVM : ViewModelBase
         set => this.RaiseAndSetIfChanged(ref _categories, value);
     }
 
-    public ObservableCollection<Dish> SelectedDishes
+    public float PrePrice
     {
-        get => _selectedDishes;
-        set => this.RaiseAndSetIfChanged(ref _selectedDishes, value);
+        get => _prePrice;
+        set => this.RaiseAndSetIfChanged(ref _prePrice, value);
     }
-
-    public ObservableCollection<Dish> DishesInCart
-    {
-        get => _dishesInCart;
-        set => this.RaiseAndSetIfChanged(ref _dishesInCart, value);
-    }
+    
+    public ReactiveCommand<Window, Unit> BuyButton { get; }
 
     public SellerVM()
     {
         DishCategory = new ObservableCollection<DishCategory>(Helper.GetContext().DishCategories.ToList());
         Category = new ObservableCollection<Category>(Helper.GetContext().Categories.ToList());
         Dish = new ObservableCollection<Dish>(Helper.GetContext().Dishes.ToList());
+        BuyButton = ReactiveCommand.Create<Window>(CreateOrderImpl);
+    }
+
+    private void CreateOrderImpl(Window obj)
+    {
+        CheckView cv = new CheckView();
+        var context = Helper.GetContext();
+        var dishes = context.Dishes.Where(x => _dishesInCart.Select(x => x.IdDish).Contains(x.IdDish)).ToList();
+
+        Order order = new Order();
+        order.DateAndTime = DateTime.Now;
+        order.FullPrice = _dishesInCart.Sum(x => x.Price);
+        order.OrderDishes = dishes.Select(x => new OrderDish() { IdDishNavigation = x, Count = x.Count }).ToList();
+        Helper.GetContext().Orders.Add(order);
+        Helper.GetContext().Orders.UpdateRange();
+        Helper.GetContext().SaveChanges();
+        
+        foreach (var d in DishesInSelectCat)
+        {
+            d.Count = 1;
+        }
+        // PrintChek(obj);
+        cv.Show();
+        // _dishesInCart.Clear();
+    }
+
+    private void PrintChek(Window obj)
+    {
+        CheckView cv = new CheckView();
+        // CheckVM checkVm = new CheckVM();
+        // checkVm.Aggregate(DishesInCart, PrePrice);
+        cv.Show();
     }
 
     public void EditCountDishImpl(Dish dish, char f)
     {
         int i = 0;
+        
         if (f == '+')
         {
             dish.Count += 1;
         }
-
         else
         {
-            dish.Count -= 1;
+            if (dish.Count > 0)
+            {
+                dish.Count -= 1;
+            }
         }
 
         foreach (var d in DishesInSelectCat)

@@ -12,19 +12,22 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CoffeeDrink4
-build_property.ProjectDir = D:\Документы\yчёба\Курсовая 2\Разработка\CoffeeDrink4\CoffeeDrink4\
+build_property.ProjectDir = C:\Users\тьт\Documents\yчёба\Курсовая 2\Разработка\CoffeeDrink4\CoffeeDrink4\
 
-[D:/Документы/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/App.axaml]
+[C:/Users/тьт/Documents/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Документы/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/Styles/AppStyle.axaml]
+[C:/Users/тьт/Documents/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/Styles/AppStyle.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Документы/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/Views/AuthorizationView.axaml]
+[C:/Users/тьт/Documents/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/Views/AuthorizationView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Документы/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/Views/MainView.axaml]
+[C:/Users/тьт/Documents/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/Views/CheckView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Документы/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/Views/SellerView.axaml]
+[C:/Users/тьт/Documents/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/Views/MainView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/тьт/Documents/yчёба/Курсовая 2/Разработка/CoffeeDrink4/CoffeeDrink4/Views/SellerView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

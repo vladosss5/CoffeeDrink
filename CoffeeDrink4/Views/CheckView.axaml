@@ -1,0 +1,88 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels1="clr-namespace:CoffeeDrink4.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="720" d:DesignHeight="1080"
+        x:Class="CoffeeDrink4.Views.CheckView"
+        Title="CheckView">
+        
+        <Design.DataContext>
+                <viewModels1:CheckVM/>
+        </Design.DataContext>
+        
+        <Window.Styles>
+                <StyleInclude Source="/Styles/AppStyle.axaml" />
+        </Window.Styles>
+        
+<Grid>
+        <Border Grid.Row="0" 
+                Background="Azure" Opacity="0.7"
+                CornerRadius="100"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="20">
+                <Image Source="/Assets/Logo.png" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Height="150" Width="150"
+                       Margin="20" Opacity="1.4"/>
+        </Border>
+
+        <Border Grid.Row="1"
+                Background="Azure" Opacity="0.7"
+                CornerRadius="25"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Margin="15, 0,15,10">
+                <Grid Opacity="1.4" Background="Transparent"
+                      Margin="15">
+                        <TextBlock Grid.Column="0" Grid.Row="0" Text="Вы купили:"
+                                   VerticalAlignment="Top"
+                                   HorizontalAlignment="Left"
+                                   FontSize="30"
+                                   FontWeight="Bold"
+                                   FontFamily="Sweet Mavka Script"/>
+                        
+                        <DataGrid Grid.Column="0" Grid.Row="1"
+                                  Items="{Binding BuyDishes}">
+                                <DataGrid.Columns>
+                                        <DataGridTextColumn IsReadOnly="True" Header="Название"
+                                                            Binding="{Binding Name}"/>
+                                        <DataGridTextColumn IsReadOnly="True" Header="Кол-во"
+                                                            Binding="{Binding Count}"/>
+                                        <DataGridTextColumn IsReadOnly="True" Header="Цена"
+                                                            Binding="{Binding Price}"/>
+                                </DataGrid.Columns>
+                        </DataGrid>
+                        
+                        <TextBlock Grid.Row="2" Grid.Column="0"
+                                   Text="Итого:"/>
+                        
+                        <TextBlock Grid.Column="1" Grid.Row="2"
+                                   Text="{Binding CheckPrice}"/>
+                        
+                        <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                </Grid>
+                
+        </Border>
+                
+
+        
+        <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+</Grid>
+</Window>

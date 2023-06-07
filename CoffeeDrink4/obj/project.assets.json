@@ -5884,11 +5884,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Документы\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\CoffeeDrink4.csproj",
+      "projectUniqueName": "C:\\Users\\тьт\\Documents\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\CoffeeDrink4.csproj",
       "projectName": "CoffeeDrink4",
-      "projectPath": "D:\\Документы\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\CoffeeDrink4.csproj",
+      "projectPath": "C:\\Users\\тьт\\Documents\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\CoffeeDrink4.csproj",
       "packagesPath": "C:\\Users\\тьт\\.nuget\\packages\\",
-      "outputPath": "D:\\Документы\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\obj\\",
+      "outputPath": "C:\\Users\\тьт\\Documents\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\тьт\\AppData\\Roaming\\NuGet\\NuGet.Config",
