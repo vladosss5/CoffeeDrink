@@ -2,13 +2,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:viewModels1="clr-namespace:CoffeeDrink4.ViewModels"
+        xmlns:viewModels="clr-namespace:CoffeeDrink4.ViewModels"
         mc:Ignorable="d" d:DesignWidth="720" d:DesignHeight="1080"
         x:Class="CoffeeDrink4.Views.CheckView"
-        Title="CheckView">
+        Title="CheckView"
+        x:DataType="viewModels:CheckVM">
         
         <Design.DataContext>
-                <viewModels1:CheckVM/>
+                <viewModels:CheckVM/>
         </Design.DataContext>
         
         <Window.Styles>

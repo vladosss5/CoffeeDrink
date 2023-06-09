@@ -125,7 +125,6 @@ public class SellerVM : ViewModelBase
 
     private void CreateOrderImpl(Window obj)
     {
-        CheckView cv = new CheckView();
         var context = Helper.GetContext();
         var dishes = context.Dishes.Where(x => _dishesInCart.Select(x => x.IdDish).Contains(x.IdDish)).ToList();
 
@@ -136,22 +135,20 @@ public class SellerVM : ViewModelBase
         Helper.GetContext().Orders.Add(order);
         Helper.GetContext().Orders.UpdateRange();
         Helper.GetContext().SaveChanges();
-        
-        foreach (var d in DishesInSelectCat)
+
+        foreach (var d in DishesInSelectCat) //Приводит количество блюд к изначальному значению
         {
             d.Count = 1;
         }
-        // PrintChek(obj);
-        cv.Show();
-        // _dishesInCart.Clear();
+
+        CreateCheck(obj);
     }
 
-    private void PrintChek(Window obj)
+    private void CreateCheck(Window obj)
     {
-        CheckView cv = new CheckView();
-        // CheckVM checkVm = new CheckVM();
-        // checkVm.Aggregate(DishesInCart, PrePrice);
-        cv.Show();
+        CheckView cvw = new CheckView();
+        cvw.Show();
+        // obj.Close();
     }
 
     public void EditCountDishImpl(Dish dish, char f)

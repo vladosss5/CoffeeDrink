@@ -9,40 +9,14 @@ namespace CoffeeDrink4.ViewModels;
 
 public class CheckVM : ViewModelBase
 {
-    private ObservableCollection<Dish> _buyDishes;
-    private int _numberOrder;
-    private float _checkPrice;
-
-    public ObservableCollection<Dish> BuyDishes
-    {
-        get => _buyDishes;
-        set => this.RaiseAndSetIfChanged(ref _buyDishes, value);
-    }
-
-    public float CheckPrice
-    {
-        get => _checkPrice;
-        set => this.RaiseAndSetIfChanged(ref _checkPrice, value);
-    }
-
-    public int NumberOrder
-    {
-        get => _numberOrder;
-        set => this.RaiseAndSetIfChanged(ref _numberOrder, value);
-    }
-
+    public ObservableCollection<Dish> BuyDishes { get; set; }
+    public int NumberOrder;
+    public float CheckPrice;
+    
     public CheckVM()
     {
-        SellerVM svm = new SellerVM();
-        SellerView sv = new SellerView();
-        BuyDishes.AddRange(svm.DishesInCart);//DishesInCart обнуляется!!!
-        CheckPrice = svm.PrePrice;
-        sv.Close();
+        // SellerVM svm = new SellerVM();
+        // BuyDishes.AddRange(svm.DishesInCart);
+        // CheckPrice = svm.PrePrice;
     }
-
-    // public void Aggregate(ObservableCollection<Dish> dishesInCart, float prePrice)
-    // {
-    //     BuyDishes.AddRange(dishesInCart);
-    //     CheckPrice = prePrice;
-    // }
 }

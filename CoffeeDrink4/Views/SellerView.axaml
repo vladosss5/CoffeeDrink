@@ -56,7 +56,7 @@
                          Items="{Binding Category}"
                          SelectedItem="{Binding SelectCategory}"
                          Background="Transparent" Margin="5,10,5,5"
-                         VerticalAlignment="Stretch">
+                         VerticalAlignment="Stretch" CornerRadius="15">
                         <ListBox.ItemTemplate>
                                 <DataTemplate>
                                         <Grid>

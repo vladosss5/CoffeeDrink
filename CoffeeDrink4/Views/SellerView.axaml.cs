@@ -12,7 +12,7 @@ public partial class SellerView : Window
     {
         DataContext = new SellerVM();
         InitializeComponent();
-        
+
 #if DEBUG
         this.AttachDevTools();
 #endif

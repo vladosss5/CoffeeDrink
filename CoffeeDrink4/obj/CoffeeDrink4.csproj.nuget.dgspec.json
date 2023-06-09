@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\тьт\\Documents\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\CoffeeDrink4.csproj": {}
+    "C:\\Users\\kipor\\Documents\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\CoffeeDrink4.csproj": {}
   },
   "projects": {
-    "C:\\Users\\тьт\\Documents\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\CoffeeDrink4.csproj": {
+    "C:\\Users\\kipor\\Documents\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\CoffeeDrink4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\тьт\\Documents\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\CoffeeDrink4.csproj",
+        "projectUniqueName": "C:\\Users\\kipor\\Documents\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\CoffeeDrink4.csproj",
         "projectName": "CoffeeDrink4",
-        "projectPath": "C:\\Users\\тьт\\Documents\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\CoffeeDrink4.csproj",
-        "packagesPath": "C:\\Users\\тьт\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\тьт\\Documents\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\obj\\",
+        "projectPath": "C:\\Users\\kipor\\Documents\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\CoffeeDrink4.csproj",
+        "packagesPath": "C:\\Users\\kipor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kipor\\Documents\\yчёба\\Курсовая 2\\Разработка\\CoffeeDrink4\\CoffeeDrink4\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\тьт\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kipor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -41,6 +46,10 @@
           "targetAlias": "net7.0",
           "dependencies": {
             "Avalonia": {
+              "target": "Package",
+              "version": "[0.10.19, )"
+            },
+            "Avalonia.Controls.DataGrid": {
               "target": "Package",
               "version": "[0.10.19, )"
             },
@@ -109,7 +118,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
